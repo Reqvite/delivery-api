@@ -15,7 +15,7 @@ const foodSchema = new mongoose.Schema(
       required: [true, "Img is required"],
       default: null,
     },
-    
+
     shop: {
       type: String,
       required: [true, "Shop is required"],
@@ -26,7 +26,6 @@ const foodSchema = new mongoose.Schema(
       default: [],
     },
   },
-  { timestamps: true }
 );
 
 const Food = mongoose.model("Food", foodSchema);

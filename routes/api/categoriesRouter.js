@@ -5,7 +5,7 @@ const { getCategoriesController, getFoodByCategoryController } = require("../../
 const router = express.Router();
 
 router.get("/", asyncWrapper(getCategoriesController));
-router.get("/category/", asyncWrapper(getFoodByCategoryController));
+router.get("/category", asyncWrapper(getFoodByCategoryController));
 
 module.exports = {
     categoriesRouter: router,

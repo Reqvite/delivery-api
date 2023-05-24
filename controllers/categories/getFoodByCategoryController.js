@@ -1,8 +1,8 @@
 const { Food } = require("../../models");
 
 const getFoodByCategoryController = async (req, res) => {
-    const { category } = req.query;
-    const food = await Food.find({ shop: { $regex: category, $options: "i" } },)
+    const { name } = req.query;
+    const food = await Food.find({ shop: { $regex: name, $options: "i" } },)
 
     return res.json({
         status: "success",
