@@ -28,5 +28,5 @@ This script runs ESLint to check for linting issues in JavaScript files (*.js).
 This script runs ESLint with the --fix flag to automatically fix fixable linting issues in JavaScript files (*.js).
 
 ## Frontend:
-- [Delivery Food Page]([https://so-yummy.netlify.app/main](https://req-food-delivery.netlify.app/))
+- [Delivery Food Page](https://req-food-delivery.netlify.app/)
 - [Delivery Food repositoriy](https://github.com/Reqvite/delivery-app)
