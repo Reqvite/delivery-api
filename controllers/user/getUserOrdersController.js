@@ -1,3 +1,4 @@
+const { ValidationError } = require("../../helpers/errors");
 const { Order } = require("../../models");
 
 const getUserOrdersController = async (req, res) => {
@@ -11,6 +12,11 @@ const getUserOrdersController = async (req, res) => {
     }
 
     const orders = await Order.find(searchParams)
+
+    if (!orders.length) {
+        throw new ValidationError('No data were found by this email or phone.')
+    }
+
     return res.json({
         status: "success",
         code: 200,
