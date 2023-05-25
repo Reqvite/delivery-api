@@ -6,9 +6,6 @@
 - Joi,
 - MongoDB,
 - Mongoose,
-- Axios,
-- Formik,
-- React-hot-toast
 
 ## Installation and launch of the project
 
