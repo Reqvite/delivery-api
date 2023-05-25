@@ -1,8 +1,7 @@
 const { Order } = require("../../models");
 
 const getUserOrdersController = async (req, res) => {
-    const { searchValue } = req.body
-
+    const { searchValue } = req.query
     let searchParams;
 
     if (searchValue.includes('@')) {
