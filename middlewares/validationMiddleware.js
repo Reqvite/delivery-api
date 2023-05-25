@@ -10,7 +10,7 @@ module.exports = {
                 .required(),
             phone: Joi.string()
                 .required(),
-            address: Joi.string().alphanum().required(),
+            address: Joi.string().required(),
             foodList: Joi.array()
         });
 
