@@ -5,7 +5,7 @@
 - Express,
 - Joi,
 - MongoDB,
-- Mongoose,
+- Mongoose
 
 ## Installation and launch of the project
 
