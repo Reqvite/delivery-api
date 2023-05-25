@@ -1,31 +1,32 @@
-## GoIT Node.js Course Template Homework
+## Back-end part of Food Delivery
 
-Виконайте форк цього репозиторію для виконання домашніх завдань (2-6)
-Форк створить репозиторій на вашому http://github.com
+### Used technologies:
 
-Додайте ментора до колаборації
+- Express,
+- Joi,
+- MongoDB,
+- Mongoose
 
-Для кожної домашньої роботи створюйте свою гілку.
+## Installation and launch of the project
 
-- hw02
-- hw03
-- hw04
-- hw05
-- hw06
+To run this project nstall the project's base dependencies with:
 
-Кожна нова гілка для др повинна робитися з master
+### `npm install`
 
-Після того, як ви закінчили виконувати домашнє завдання у своїй гілці, необхідно зробити пулл-реквест (PR). Потім додати ментора для рев'ю коду. Тільки після того, як ментор заапрувить PR, ви можете виконати мердж гілки з домашнім завданням у майстер.
+In the project directory, you can run:
 
-Уважно читайте коментарі ментора. Виправте зауваження та зробіть коміт у гілці з домашнім завданням. Зміни підтягнуться у PR автоматично після того, як ви відправите коміт з виправленнями на github
-Після виправлення знову додайте ментора на рев'ю коду.
+### `npm start`
+This script starts the server in production mode by running the server.js file. It sets the NODE_ENV environment variable to production.
 
-- При здачі домашньої роботи є посилання на PR
-- JS-код чистий та зрозумілий, для форматування використовується Prettier
+### `npm run start:dev`
+This script starts the server in development mode by running the server.js file using nodemon, which automatically restarts the server when changes are detected. It sets the NODE_ENV environment variable to development.
 
-### Команди:
+### `npm run lint`
+This script runs ESLint to check for linting issues in JavaScript files (*.js).
 
-- `npm start` &mdash; старт сервера в режимі production
-- `npm run start:dev` &mdash; старт сервера в режимі розробки (development)
-- `npm run lint` &mdash; запустити виконання перевірки коду з eslint, необхідно виконувати перед кожним PR та виправляти всі помилки лінтера
-- `npm lint:fix` &mdash; та ж перевірка лінтера, але з автоматичними виправленнями простих помилок
+### `npm run lint:fix`
+This script runs ESLint with the --fix flag to automatically fix fixable linting issues in JavaScript files (*.js).
+
+## Frontend:
+- [Delivery Food Page](https://req-food-delivery.netlify.app/)
+- [Delivery Food repositoriy](https://github.com/Reqvite/delivery-app)
