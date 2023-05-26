@@ -2,25 +2,25 @@ const { WrongParametersError } = require("../../helpers/errors");
 const { Order } = require("../../models");
 
 const getUserOrdersController = async (req, res) => {
-    const { searchValue } = req.query
+    const { searchValue } = req.query;
     let searchParams;
 
-    if (searchValue.includes('@')) {
-        searchParams = { email: searchValue }
+    if (searchValue.includes("@")) {
+        searchParams = { email: searchValue };
     } else {
-        searchParams = { phone: searchValue }
+        searchParams = { phone: searchValue };
     }
 
-    const orders = await Order.find(searchParams)
+    const orders = await Order.find(searchParams).sort({ createdAt: -1 });
 
     if (!orders.length) {
-        throw new WrongParametersError('No data were found by this email or phone.')
+        throw new WrongParametersError("No data were found by this email or phone.");
     }
 
     return res.json({
         status: "success",
         code: 200,
-        orders
+        orders,
     });
 };
 
