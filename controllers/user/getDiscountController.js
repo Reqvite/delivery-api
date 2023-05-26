@@ -4,15 +4,16 @@ const { Coupon } = require("../../models");
 const getDiscountController = async (req, res) => {
     const { title } = req.query;
 
-    const discount = await Coupon.find({ title })
+    const coupon = await Coupon.find({ title })
 
-    if (!discount.length) {
+    if (!coupon.length) {
         throw new WrongParametersError('Sorry, there is no such coupon.')
     }
 
     return res.json({
         status: "success",
         code: 200,
+        discount: coupon[0].discount
     });
 };
 
