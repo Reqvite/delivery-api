@@ -24,6 +24,14 @@ const orderSchema = new mongoose.Schema(
       required: [true, "FoodList is required"],
       default: [],
     },
+    totalPrice: {
+      type: Number,
+      required: [true, "Total price is required"],
+    },
+    discount: {
+      type: Number,
+      required: [true, "Discount is required"],
+    }
   },
   { timestamps: true }
 );

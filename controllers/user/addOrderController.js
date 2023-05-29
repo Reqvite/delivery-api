@@ -8,6 +8,8 @@ const addOrderController = async (req, res) => {
         phone,
         address,
         foodList,
+        totalPrice,
+        discount
     } = req.body;
 
     const order = new Order({
@@ -16,6 +18,8 @@ const addOrderController = async (req, res) => {
         phone,
         address,
         foodList,
+        totalPrice,
+        discount
     }
     );
 

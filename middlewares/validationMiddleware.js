@@ -10,7 +10,9 @@ module.exports = {
             phone: Joi.string()
                 .required(),
             address: Joi.string().required(),
-            foodList: Joi.array()
+            foodList: Joi.array(),
+            totalPrice: Joi.number(),
+            discount: Joi.number(),
         });
 
         const validationResult = schema.validate(req.body);
