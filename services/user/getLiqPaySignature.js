@@ -2,6 +2,7 @@ const LiqPay = require("../../lib/liqpay");
 const { PUBLIC_LIQPAY_KEY, PRIVATE_LIQPAY_KEY, BASE_URL, BASE_URL_FRONT } =
   process.env;
 const liqpay = new LiqPay(PUBLIC_LIQPAY_KEY, PRIVATE_LIQPAY_KEY);
+const axios = require("axios");
 
 const base64 = require("base-64");
 const utf8 = require("utf8");
