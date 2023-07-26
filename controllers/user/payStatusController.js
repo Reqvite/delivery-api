@@ -1,19 +1,14 @@
 const { payStatus } = require("../../services/user/getLiqPaySignature");
 
 const payStatusController = async (req, res) => {
-  try {
-    const { data, signature } = req.body;
-    console.log(req.body);
-    // console.log(1);
-    // console.log(req.body);
+  const { data, signature } = req.body;
 
-    // payStatus(data, signature);
-    res.status(200).json({
-      message: `success`,
-    });
-  } catch (e) {
-    console.log(e);
-  }
+  const status = payStatus(data, signature);
+  res.status(200).json({
+    message: `success`,
+    code: 200,
+    status,
+  });
 };
 
 module.exports = {

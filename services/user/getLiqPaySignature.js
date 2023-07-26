@@ -2,7 +2,6 @@ const LiqPay = require("../../lib/liqpay");
 const { PUBLIC_LIQPAY_KEY, PRIVATE_LIQPAY_KEY, BASE_URL, BASE_URL_FRONT } =
   process.env;
 const liqpay = new LiqPay(PUBLIC_LIQPAY_KEY, PRIVATE_LIQPAY_KEY);
-const axios = require("axios");
 
 const base64 = require("base-64");
 const utf8 = require("utf8");
@@ -43,8 +42,6 @@ const payStatus = (data, signature) => {
   }
 
   const bytes = base64.decode(data);
-  const decData = JSON.parse(utf8.decode(bytes));
-
   const {
     order_id,
     status,
@@ -53,21 +50,42 @@ const payStatus = (data, signature) => {
     create_date,
     description,
     end_date,
-    err_code,
-    err_description,
-    ip,
-    is_3ds,
-    liqpay_order_id,
-    payment_id,
     paytype,
-    receiver_commission,
-    sender_card_mask2,
-    sender_card_type,
-    sender_commission,
-    sender_first_name,
-    sender_last_name,
-    sender_phone,
-  } = decData;
+  } = JSON.parse(utf8.decode(bytes));
+
+  // const {
+  //   order_id,
+  //   status,
+  //   amount,
+  //   completion_date,
+  //   create_date,
+  //   description,
+  //   end_date,
+  //   err_code,
+  //   err_description,
+  //   ip,
+  //   is_3ds,
+  //   liqpay_order_id,
+  //   payment_id,
+  //   paytype,
+  //   receiver_commission,
+  //   sender_card_mask2,
+  //   sender_card_type,
+  //   sender_commission,
+  //   sender_first_name,
+  //   sender_last_name,
+  //   sender_phone,
+  // } = decData;
+
+  return {
+    order_id,
+    status,
+    amount,
+    completion_date,
+    create_date,
+    description,
+    end_date,
+  };
 };
 
 module.exports = { getLiqPaySignature, payStatus };
