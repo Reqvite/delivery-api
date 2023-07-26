@@ -18,7 +18,6 @@ const getLiqPaySignature = (totalPrice, _id) => {
       ? "http://localhost:5173"
       : `${BASE_URL_FRONT}`;
 
-  console.log(apiUrl);
   const dataParams = {
     public_key: PUBLIC_LIQPAY_KEY,
     version: 3,
