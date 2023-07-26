@@ -70,3 +70,21 @@ const payStatus = (data, signature) => {
 };
 
 module.exports = { getLiqPaySignature, payStatus };
+
+const checkPaymentStatus = async (orderId) => {
+  try {
+    const response = await liqpay.api("request", {
+      action: "payment_status",
+      version: "3",
+      order_id: orderId,
+    });
+    console.log(response);
+    console.log(1);
+    return response;
+  } catch (error) {
+    console.error("Error checking payment status:", error);
+    throw error;
+  }
+};
+
+console.log(checkPaymentStatus(21));
