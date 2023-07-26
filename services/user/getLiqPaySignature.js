@@ -22,10 +22,10 @@ const getLiqPaySignature = (totalPrice, _id) => {
     public_key: PUBLIC_LIQPAY_KEY,
     version: 3,
     action: "pay",
-    amount: totalPrice,
-    currency: "USD",
+    amount: Number(totalPrice),
+    currency: "UAH",
     description,
-    order_id: _id,
+    order_id: "21",
     result_url: frontUrl,
     server_url: apiUrl,
   };
