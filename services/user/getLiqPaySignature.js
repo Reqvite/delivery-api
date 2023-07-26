@@ -24,7 +24,7 @@ const getLiqPaySignature = (totalPrice, _id) => {
     version: 3,
     action: "pay",
     amount: totalPrice,
-    currency: "UAH",
+    currency: "USD",
     description,
     order_id: _id,
     result_url: frontUrl,
