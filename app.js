@@ -11,10 +11,27 @@ const app = express();
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
-const wellKnownPath = path.join(__dirname, ".well-known");
+app.use((req, res, next) => {
+  if (
+    req.url === "/.well-known/apple-developer-merchantid-domain-association"
+  ) {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "public",
+        ".well-known",
+        "apple-developer-merchantid-domain-association.txt"
+      )
+    );
+  } else {
+    next();
+  }
+});
 
+// Set the "public" folder as a static directory
+app.use(express.static(path.join(__dirname, "public")));
 // Розпізнавання запитів до директорії .well-known і повернення відповідного файлу
-app.use("/.well-known", express.static(wellKnownPath));
+// app.use("/.well-known", express.static(wellKnownPath));
 
 app.use(logger(formatsLogger));
 app.use(cors());
