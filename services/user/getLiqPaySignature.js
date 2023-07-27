@@ -88,3 +88,44 @@ const payStatus = (data, signature) => {
 };
 
 module.exports = { getLiqPaySignature, payStatus };
+
+// 1 opearation status
+// liqpay.api(
+//   "request",
+//   {
+//     action: "status",
+//     version: "3",
+//     order_id: "64c242d218b65356f40d4f93",
+//   },
+//   function (json) {
+//     console.log(json);
+//   }
+// );
+
+// archive
+// liqpay.api(
+//   "request",
+//   {
+//     action: "reports",
+//     version: "3",
+//     date_from: "1677820800000",
+//     date_to: "1688102400000",
+//   },
+//   function (json) {
+//     console.log(json);
+//   }
+// );
+
+// send receipts
+// liqpay.api(
+//   "request",
+//   {
+//     action: "ticket",
+//     version: "3",
+//     order_id: "64c242d218b65356f40d4f93",
+//     email: "test@gmail.com",
+//   },
+//   function (json) {
+//     console.log(json);
+//   }
+// );
