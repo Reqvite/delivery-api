@@ -31,7 +31,8 @@ const orderSchema = new mongoose.Schema(
     discount: {
       type: Number,
       required: [true, "Discount is required"],
-    }
+    },
+    status: {},
   },
   { timestamps: true }
 );

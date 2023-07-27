@@ -3,8 +3,7 @@ const { PUBLIC_LIQPAY_KEY, PRIVATE_LIQPAY_KEY, BASE_URL, BASE_URL_FRONT } =
   process.env;
 const liqpay = new LiqPay(PUBLIC_LIQPAY_KEY, PRIVATE_LIQPAY_KEY);
 
-const base64 = require("base-64");
-const utf8 = require("utf8");
+const decodeBase64UTF8 = require("../../helpers/lib/decodeBase64UTF8");
 
 const getLiqPaySignature = (totalPrice, _id) => {
   const description = `Для сплати  рахунку в ресторані. ID замовлення: ${_id}`;
@@ -41,7 +40,6 @@ const payStatus = (data, signature) => {
     console.log("Invalid signature");
   }
 
-  const bytes = base64.decode(data);
   const {
     order_id,
     status,
@@ -51,7 +49,7 @@ const payStatus = (data, signature) => {
     description,
     end_date,
     paytype,
-  } = JSON.parse(utf8.decode(bytes));
+  } = decodeBase64UTF8(data);
 
   // const {
   //   order_id,
@@ -85,6 +83,7 @@ const payStatus = (data, signature) => {
     create_date,
     description,
     end_date,
+    paytype,
   };
 };
 
