@@ -108,8 +108,22 @@ module.exports = { getLiqPaySignature, payStatus };
 //   {
 //     action: "reports",
 //     version: "3",
-//     date_from: "1677820800000",
-//     date_to: "1688102400000",
+//     date_from: "1687814400000",
+//     date_to: "1687900800000",
+//   },
+//   function (json) {
+//     console.log(json);
+//   }
+// );
+
+// register
+// liqpay.api(
+//   "request",
+//   {
+//     action: "register",
+//     version: "3",
+//     format: "json",
+//     date: "2023-07-27",
 //   },
 //   function (json) {
 //     console.log(json);
